@@ -102,6 +102,7 @@ function reset() {
     // Reset Values
     countdownTitle = '';
     countdownDate = '';
+    localStorage.removeItem('countdown');
 }
 
 // Get Countdown from localStorage if available
