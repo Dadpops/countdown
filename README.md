@@ -22,6 +22,8 @@ function restorePrevCount() {
 
 Displays Time left until date in UTC time.
 
+Uses preventDefault from allowing page to refresh when submitted.
+
 ```javascript
 e.preventDefault();
     countdownTitle = e.srcElement[0].value;
@@ -33,10 +35,12 @@ e.preventDefault();
     localStorage.setItem('countdown', JSON.stringify(savedCountdown));
 ```
 
-Uses preventDefault from allowing page to refresh when submitted.
-
-
 Countdown function runs every second using setInterval();
 
-JSON.stringify to let the localStorage read and contain object and then JSON.parse to bring it back out when loading page.
+```javascript
+countdownActive = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = countdownValue - now;
+```
+
 
